@@ -8,46 +8,13 @@
       ></a>
     </li>
     <li class="nav-item d-none d-sm-inline-block">
-      <a routerLink="/dashboard" class="nav-link bg-green">Inicio</a>
+      <a routerLink="/dashboard/home" class="nav-link bg-green">Inicio</a>
     </li>
   </ul>
 
   <!-- Right navbar links -->
   <ul class="navbar-nav ml-auto">
     <!-- Notifications Dropdown Menu -->
-    <li class="nav-item dropdown">
-      <a class="nav-link bg-green" data-toggle="dropdown" href="#"
-        ><i class="far fa-bell"></i
-        ><span class="badge badge-warning navbar-badge">15</span>
-      </a>
-      <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
-        <span class="dropdown-item dropdown-header">15 Notifications</span>
-        <div class="dropdown-divider"></div>
-        <a href="#" class="dropdown-item"
-          ><i class="fas fa-envelope mr-2"></i> 4 new messages<span
-            class="float-right text-muted text-sm"
-            >3 mins</span
-          >
-        </a>
-        <div class="dropdown-divider"></div>
-        <a href="#" class="dropdown-item"
-          ><i class="fas fa-users mr-2"></i> 8 friend requests<span
-            class="float-right text-muted text-sm"
-            >12 hours</span
-          >
-        </a>
-        <div class="dropdown-divider"></div>
-        <a href="#" class="dropdown-item"
-          ><i class="fas fa-file mr-2"></i> 3 new reports
-          <span class="float-right text-muted text-sm">2 days</span>
-        </a>
-        <div class="dropdown-divider"></div>
-        <a href="#" class="dropdown-item dropdown-footer"
-          >See All Notifications</a
-        >
-      </div>
-    </li>
-
     <li class="nav-item bg-green">
       <a class="nav-link" data-widget="fullscreen" href="#" role="button">
         <i class="fas fa-expand-arrows-alt"></i>
@@ -55,6 +22,12 @@
     </li>
 
     <li class="nav-item bg-green">
+      <a class="btn btn-danger" type="submit" (click)="salir()">
+        Salir
+      </a>
+    </li>
+
+    <!-- <li class="nav-item bg-green">
       <a
         class="nav-link"
         data-widget="control-sidebar"
@@ -64,13 +37,13 @@
       >
         <i class="fas fa-th-large"></i>
       </a>
-    </li>
+    </li> -->
   </ul>
 </nav>
 
 <aside class="main-sidebar sidebar-dark-primary elevation-4">
   <!-- Brand Logo -->
-  <a href="#" class="brand-link">
+  <a routerLink="/dashboard/home" class="brand-link">
     <img
       src="https://img2.freepng.es/20180613/koy/kisspng-cattle-logo-clip-art-cow-and-calf-5b21b5d32a45e2.0585594515289358911732.jpg"
       alt="FincaTica Logo"
@@ -92,7 +65,7 @@
         />
       </div>
       <div class="info">
-        <a href="#" class="d-block">Usuario FincaTica</a>
+        <a class="d-block">Usuario FincaTica</a>
       </div>
     </div>
 
@@ -125,12 +98,12 @@
           </a>
         </li>
 
-        <li class="nav-item">
+        <!-- <li class="nav-item">
           <a routerLink="/dashboard/subastas" class="nav-link">
             <i class="nav-icon fas fa-dollar-sign"></i>
             <p>SUBASTAS</p>
           </a>
-        </li>
+        </li> -->
       </ul>
     </nav>
     <!-- /.sidebar-menu -->

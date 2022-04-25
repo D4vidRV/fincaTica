@@ -1,0 +1,82 @@
+<!-- Main content -->
+<section class="content">
+  <router-outlet>
+    <br />
+    <div class="card mb-3 container-fluid">
+      <div class="text-center">
+        <h1 style="color: green">Bienvenidos a la aplicacion FincaTica</h1>
+      </div>
+      <div class="row g-0">
+        <div class="col-md-3">
+          <img
+            src="https://dvev.fundacionempresaspolar.org/media/venezuelanisms/aljibe/DjlFPnYr6L.png"
+            class="img-fluid rounded-start"
+            style="max-height: 350px; width: 100%"
+            alt="..."
+          />
+        </div>
+        <div class="col-md-9">
+          <div class="card-body">
+            <h5 class="card-title"></h5>
+            <h5 class="card-text" style="color: green; text-align: justify">
+              En la aplicación FincaTica podrán manejar todo lo relacionado al
+              control de sus animales por medio de una interfaz fácil y rápida
+              podrán registrar animales con sus respectivas características como
+              peso y precio de compra para así una vez este animal haya cumplido
+              con su ciclo en la finca pueda salir a la venta llevando un total
+              control de sus cifras.
+            </h5>
+          </div>
+        </div>
+      </div>
+      <!-- Menu con imagenes -->
+      <div class="row row-cols-1 row-cols-md-3 g-4">
+        <a routerLink="/dashboard/usuarios" class="nav-link">
+          <div class="col">
+            <div class="card h-100" style="max-width: 450px">
+              <img
+                src="https://dvev.fundacionempresaspolar.org/media/venezuelanism/aljibe/dT8a6tra02.png"
+                class="card-img-top"
+                style="max-height: 250px; width: 100%"
+                alt="..."
+              />
+              <div class="card-body">
+                <h5 class="text-center" style="color: green">Usuarios</h5>
+              </div>
+            </div>
+          </div>
+        </a>
+        <a routerLink="/dashboard/numeros" class="nav-link">
+          <div class="col">
+            <div class="card h-100" style="max-width: 450px">
+              <img
+                src="https://dvev.fundacionempresaspolar.org/media/venezuelanisms/aljibe/PHj2n1OEeb.png"
+                class="card-img-top"
+                style="max-height: 250px; width: 100%"
+                alt="..."
+              />
+              <div class="card-body">
+                <h5 class="text-center" style="color: green">Numeros</h5>
+              </div>
+            </div>
+          </div>
+        </a>
+        <a routerLink="/dashboard/animales" class="nav-link">
+          <div class="col">
+            <div class="card h-100" style="max-width: 450px">
+              <img
+                src="https://dvev.fundacionempresaspolar.org/media/venezuelanism/cachapa/4umBsPYYJX.png"
+                class="card-img-top"
+                style="max-height: 250px; width: 100%"
+                alt="..."
+              />
+              <div class="card-body">
+                <h5 class="text-center" style="color: green">Animales</h5>
+              </div>
+            </div>
+          </div>
+        </a>
+      </div>
+    </div>
+  </router-outlet>
+</section>

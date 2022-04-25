@@ -34,7 +34,7 @@ export class LoginComponent {
           timer: 1500,
         });
         // this.router.navigateByUrl('/dashboard');
-        this.router.navigate(['/dashboard']);
+        this.router.navigate(['/dashboard/home']);
         // this.router.navigateByUrl('/dashboard', {skipLocationChange: true}).then(()=> this.router.navigateByUrl('/dashboard'));
       } else {
         Swal.fire('Usuario y/o contraseña incorrectos', '', 'error');

@@ -7,19 +7,18 @@ import { SharedModule } from '../shared/shared.module';
 import { AnimalesModule } from '../animales/animales.module';
 import { NumerosModule } from '../numeros/numeros.module';
 import { UsuariosModule } from '../usuarios/usuarios.module';
-
+import { HomeComponent } from './pages/home/home.component';
+import { SubastasModule } from '../subastas/subastas.module';
 
 @NgModule({
-  declarations: [
-    MainComponent
-  ],
+  declarations: [MainComponent, HomeComponent],
   imports: [
     CommonModule,
     DashboardRoutingModule,
     AnimalesModule,
     NumerosModule,
     UsuariosModule,
-    SharedModule
-  ]
+    SharedModule,
+  ],
 })
-export class DashboardModule { }
+export class DashboardModule {}

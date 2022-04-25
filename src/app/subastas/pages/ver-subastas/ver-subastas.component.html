@@ -1,1 +1,66 @@
-<p>ver-subastas works!</p>
+<h3>Subastas a nivel nacional</h3>
+
+<form
+  autocomplete="off"
+  [formGroup]="formularioBuscarSubasta"
+  (ngSubmit)="buscarPrecios()"
+>
+  <div class="card-body">
+    <div class="form-group">
+      <label for="" class="text-primary">Subasta</label>
+      <select
+        class="custom-select form-control-border border-width-2"
+        formControlName="subasta"
+      >
+        <!-- TODO: ngFor consultando un servicio que me brinde las subastas -->
+        <option value="">-- Seleccione una subasta --</option>
+        <!-- <option *ngFor="let subasta of subastas" [value]="subasta._id">
+          {{ subasta.nombre }}
+        </option> -->
+        <option value="6266d4c60d430f996e0dc566">
+          Subasta Ganadera Sancarleña
+        </option>
+        <option value="6266d89c0d430f996e0de82a">
+          Subasta Ganadera El Progreso (Barranca)
+        </option>
+        <option value="6266dad00d430f996e0dfc0f">
+          Subasta Ganadera El Progreso (Nicoya)
+        </option>
+        <option value="6266db8a0d430f996e0e02e6">
+          Subasta Ganadera Maleco S.A.
+        </option>
+        <option value="6266dd5f0d430f996e0e13a4">
+          Subasta Ganadera Montecillos (Upala)
+        </option>
+        <option value="6266df630d430f996e0e2600">
+          Subasta Ganadera El Progreso (Parrita)
+        </option>
+      </select>
+      <span
+        class="form-text text-danger"
+        *ngIf="
+          formularioBuscarSubasta.controls['subasta'].errors &&
+          formularioBuscarSubasta.controls['subasta'].touched
+        "
+        ><strong>Debe seleccionar una subasta</strong></span
+      >
+    </div>
+  </div>
+  <!-- /.card-body -->
+
+  <div class="modal-footer justify-content-between">
+    <div>
+      <button
+        type="submit"
+        class="btn btn-success"
+        [disabled]="formularioBuscarSubasta.pending"
+      >
+        Buscar
+      </button>
+
+      <button type="button" class="btn btn-success" (click)="buscarSubasta()">
+        Prueba
+      </button>
+    </div>
+  </div>
+</form>

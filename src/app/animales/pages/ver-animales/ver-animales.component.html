@@ -52,7 +52,9 @@
       <th>Color</th>
       <th>Género</th>
       <th>Fecha Entrada</th>
+      <th>Precio Entrada</th>
       <th>Fecha Salida</th>
+      <th>Precio Salida</th>
       <th>Acciones</th>
     </tr>
   </ng-template>
@@ -64,7 +66,9 @@
       <td>{{ animal.color.nombre | titlecase }}</td>
       <td>{{ animal.genero | titlecase }}</td>
       <td>{{ animal.fecha_entrada }}</td>
+      <td>{{ animal.precio_entrada | number }}</td>
       <td>{{ animal.fecha_salida }}</td>
+      <td>{{ animal.precio_salida | number }}</td>
       <td>
         <button
           type="button"
