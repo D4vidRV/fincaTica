@@ -8,7 +8,7 @@ import { environment } from 'src/environments/environment';
 export class SubastasService {
   constructor(private http: HttpClient) {}
 
-  private baseUrl: string = environment.localUrl;
+  private baseUrl: string = environment.herokuUrl;
 
   // Metodo para consultar las subastas existentes
   consultarNombresSubastas() {
