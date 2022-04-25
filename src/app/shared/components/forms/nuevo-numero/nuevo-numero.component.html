@@ -1,0 +1,50 @@
+<form
+  autocomplete="off"
+  [formGroup]="formularioAgregarNumero"
+  (ngSubmit)="guardar()"
+>
+  <div class="card-body">
+    <div class="form-group">
+      <label for="exampleInputPassword1">Número</label>
+      <input type="number" class="form-control" formControlName="num" />
+      <span
+        class="form-text text-danger"
+        *ngIf="
+          formularioAgregarNumero.controls['num'].errors?.['required'] &&
+          formularioAgregarNumero.controls['num'].touched
+        "
+        ><strong>Debe ingresar un numero mayor a 0</strong></span
+      >
+      <span
+        class="form-text text-danger"
+        *ngIf="
+          formularioAgregarNumero.controls['num'].errors?.['numeroTomado'] &&
+          formularioAgregarNumero.controls['num'].touched
+        "
+        ><strong>El número ya existe en el sistema</strong></span
+      >
+    </div>
+  </div>
+  <!-- /.card-body -->
+
+  <div class="modal-footer justify-content-between">
+    <button
+      type="button"
+      class="BotonGuar"
+      data-dismiss="modal"
+      (click)="closeModal()"
+    >
+      Cerrar
+    </button>
+
+    <div>
+      <button
+        type="submit"
+        class="BotonGuar"
+        [disabled]="formularioAgregarNumero.pending"
+      >
+        Guardar
+      </button>
+    </div>
+  </div>
+</form>

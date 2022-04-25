@@ -1,0 +1,139 @@
+<form
+  autocomplete="off"
+  [formGroup]="formularioAgregarAnimal"
+  (ngSubmit)="guardar()"
+>
+  <div class="card-body">
+    <div class="form-group">
+      <label for="">Número</label>
+      <select
+        class="custom-select form-control-border border-width-2"
+        formControlName="numero"
+      >
+        <!-- TODO: ngFor consultando un servicio que me brinde los numeros -->
+        <option value="">-- Seleccione un número --</option>
+        <option *ngFor="let numero of numeros" [value]="numero._id">
+          {{ numero.num }}
+        </option>
+      </select>
+      <span
+        class="form-text text-danger"
+        *ngIf="
+          formularioAgregarAnimal.controls['numero'].errors &&
+          formularioAgregarAnimal.controls['numero'].touched
+        "
+        ><strong>Debe seleccionar un número</strong></span
+      >
+    </div>
+
+    <div class="form-group">
+      <label for="">Color</label>
+      <select
+        class="custom-select form-control-border border-width-2"
+        formControlName="color"
+      >
+        <!-- TODO: ngFor consultando un servicio que me brinde los colores -->
+        <option value="">-- Seleccione un color --</option>
+        <option *ngFor="let color of colores" [value]="color._id">
+          {{ color.nombre | titlecase }}
+        </option>
+      </select>
+      <span
+        class="form-text text-danger"
+        *ngIf="
+          formularioAgregarAnimal.controls['color'].errors &&
+          formularioAgregarAnimal.controls['color'].touched
+        "
+        ><strong>Debe seleccionar un color</strong></span
+      >
+    </div>
+
+    <div class="form-group">
+      <label for="">Género</label>
+      <select
+        class="custom-select form-control-border border-width-2"
+        formControlName="genero"
+      >
+        <option value="">-- Seleccione un genero --</option>
+        <option value="macho">Macho</option>
+        <option value="hembra">Hembra</option>
+      </select>
+      <span
+        class="form-text text-danger"
+        *ngIf="
+          formularioAgregarAnimal.controls['genero'].errors &&
+          formularioAgregarAnimal.controls['genero'].touched
+        "
+        ><strong>Debe seleccionar un género</strong></span
+      >
+    </div>
+
+    <div class="form-group">
+      <label for="exampleInputPassword1">Fecha de entrada</label>
+      <input type="date" class="form-control" formControlName="fecha_entrada" />
+      <span
+        class="form-text text-danger"
+        *ngIf="
+          formularioAgregarAnimal.controls['fecha_entrada'].errors &&
+          formularioAgregarAnimal.controls['fecha_entrada'].touched
+        "
+        ><strong>Debe seleccionar una fecha</strong></span
+      >
+    </div>
+
+    <div class="form-group">
+      <label for="exampleInputPassword1">Peso de entrada</label>
+      <input
+        type="number"
+        class="form-control"
+        formControlName="peso_entrada"
+      />
+      <span
+        class="form-text text-danger"
+        *ngIf="
+          formularioAgregarAnimal.controls['peso_entrada'].errors &&
+          formularioAgregarAnimal.controls['peso_entrada'].touched
+        "
+        ><strong>El peso debe ser igual o mayor a 0</strong></span
+      >
+    </div>
+
+    <div class="form-group">
+      <label for="exampleInputPassword1">Precio de entrada</label>
+      <input
+        type="number"
+        class="form-control"
+        formControlName="precio_entrada"
+      />
+      <span
+        class="form-text text-danger"
+        *ngIf="
+          formularioAgregarAnimal.controls['precio_entrada'].errors &&
+          formularioAgregarAnimal.controls['precio_entrada'].touched
+        "
+        ><strong>El precio debe ser igual o mayor a 0</strong></span
+      >
+    </div>
+  </div>
+  <!-- /.card-body -->
+
+  <div class="modal-footer justify-content-between">
+    <button
+      type="button"
+      class="BotonGuar"
+      data-dismiss="modal"
+      (click)="closeModal()"
+    >
+      Cerrar
+    </button>
+
+    <div>
+      <button
+        class="BotonGuar"
+        type="submit"
+      >
+        Guardar
+      </button>
+    </div>
+  </div>
+</form>

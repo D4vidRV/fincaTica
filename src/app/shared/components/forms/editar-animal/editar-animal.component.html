@@ -1,0 +1,119 @@
+<form
+  autocomplete="off"
+  [formGroup]="formularioEditarAnimal"
+  (ngSubmit)="editar()"
+>
+  <div class="card-body">
+    <div class="form-group">
+      <label for="">Número: {{ animalSeleccionado.numero.num }}</label>
+    </div>
+
+    <div class="form-group">
+      <label for="">Color</label>
+      <select
+        class="custom-select form-control-border border-width-2"
+        formControlName="color"
+      >
+        <!-- TODO: ngFor consultando un servicio que me brinde los colores -->
+        <option *ngFor="let color of colores" [value]="color._id">
+          {{ color.nombre | titlecase }}
+        </option>
+      </select>
+    </div>
+
+    <div class="form-group">
+      <label for="">Género</label>
+      <select
+        class="custom-select form-control-border border-width-2"
+        formControlName="genero"
+      >
+        <option value="macho">Macho</option>
+        <option value="hembra">Hembra</option>
+      </select>
+    </div>
+
+    <div class="form-group">
+      <label for="exampleInputPassword1">Fecha de entrada</label>
+      <input type="date" class="form-control" formControlName="fecha_entrada" />
+    </div>
+
+    <div class="form-group">
+      <label for="exampleInputPassword1">Peso de entrada</label>
+      <input
+        type="number"
+        class="form-control"
+        formControlName="peso_entrada"
+      />
+      <span
+        class="form-text text-danger"
+        *ngIf="formularioEditarAnimal.controls['peso_entrada'].errors"
+        ><strong>El peso debe igual o mayor a 0</strong></span
+      >
+    </div>
+
+    <div class="form-group">
+      <label for="exampleInputPassword1">Precio de entrada</label>
+      <input
+        type="number"
+        class="form-control"
+        formControlName="precio_entrada"
+      />
+      <span
+        class="form-text text-danger"
+        *ngIf="formularioEditarAnimal.controls['precio_entrada'].errors"
+        ><strong>El precio debe ser igual o mayor a 0</strong></span
+      >
+    </div>
+
+    <div class="form-group">
+      <label for="exampleInputPassword1">Fecha de salida</label>
+      <input type="date" class="form-control" formControlName="fecha_salida" />
+    </div>
+
+    <div class="form-group">
+      <label for="exampleInputPassword1">Peso de salida</label>
+      <input type="number" class="form-control" formControlName="peso_salida" />
+      <span
+        class="form-text text-danger"
+        *ngIf="formularioEditarAnimal.controls['peso_salida'].errors"
+        ><strong>El peso debe ser igual o mayor a 0</strong></span
+      >
+    </div>
+
+    <div class="form-group">
+      <label for="exampleInputPassword1">Precio de salida</label>
+      <input
+        type="number"
+        class="form-control"
+        formControlName="precio_salida"
+      />
+      <span
+        class="form-text text-danger"
+        *ngIf="formularioEditarAnimal.controls['precio_salida'].errors"
+        ><strong>El precio debe ser igual o mayor a 0</strong></span
+      >
+    </div>
+  </div>
+  <!-- /.card-body -->
+
+  <div class="modal-footer justify-content-between">
+    <button
+      type="button"
+      class="BotonGuar"
+      data-dismiss="modal"
+      (click)="closeModal()"
+    >
+      Cerrar
+    </button>
+
+    <div>
+      <button
+        type="submit"
+        class="BotonGuar"
+        [disabled]="!formularioEditarAnimal.valid"
+      >
+        Guardar
+      </button>
+    </div>
+  </div>
+</form>

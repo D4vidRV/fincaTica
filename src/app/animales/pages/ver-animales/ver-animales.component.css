@@ -1,0 +1,32 @@
+:root{
+  --green: #7EF30F;
+  --white: #fff;
+  --white2: #f5f5f5;
+  --black1: #222;
+  --grey: #999;
+}
+
+.tablaFinca{
+  background-color: white;
+  text-align: center;
+  width: 100%;
+  border: collapse;
+}
+
+th, td{
+  padding: 4px;
+  
+  
+}
+
+td{
+  border: solid 2px #24B83D;
+  
+}
+
+thead{
+  background-color: var(--green);
+  border-bottom: solid 5px green;
+  color: var(--white);    
+  
+}

@@ -1,0 +1,25 @@
+<div
+  class="modal fade show"
+  id="modal"
+  style="display: block; padding-right: 16px"
+  aria-modal="true"
+  role="dialog"
+>
+  <div class="modal-dialog modal-xs">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title">
+          Editando el usuario {{ usuario.nombre | titlecase }}
+        </h4>
+      </div>
+      <div class="modal-body">
+        <!-- FORMULARIO NUEVO USUARIO TODO: -->
+        <app-editar-usuario
+          [usuarioSeleccionado]="usuario"
+        ></app-editar-usuario>
+      </div>
+    </div>
+    <!-- /.modal-content -->
+  </div>
+  <!-- /.modal-dialog -->
+</div>

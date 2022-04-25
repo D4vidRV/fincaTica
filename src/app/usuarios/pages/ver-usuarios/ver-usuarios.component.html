@@ -1,0 +1,55 @@
+<h3>Lista de Usuarios</h3>
+<button type="button" class="btn btn-success" (click)="openModal()">
+  Nuevo Usuario
+</button>
+<br /><br />
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">Nombre</th>
+      <th scope="col">Apellido Paterno</th>
+      <th scope="col">Apellido Materno</th>
+      <th scope="col">Correo</th>
+      <th scope="col">Rol</th>
+      <!-- <th scope="col">Estado</th> -->
+      <th scope="col">Acciones</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let usuario of usuarios">
+      <th scope="row">{{ usuario.nombre | titlecase }}</th>
+      <td>{{ usuario.apellidoPaterno | titlecase }}</td>
+      <td>{{ usuario.apellidoMaterno | titlecase }}</td>
+      <td>{{ usuario.correo }}</td>
+      <td>{{ usuario.rol }}</td>
+      <!-- <td>{{ usuario.estado }}</td> -->
+      <td>
+        <button
+          type="button"
+          (click)="openModalEditar(usuario)"
+          class="btn btn-success"
+        >
+          Editar
+        </button>
+        <a> | </a>
+        <button
+          type="button"
+          (click)="eliminarUsuario(usuario)"
+          class="btn btn-danger ml-1"
+        >
+          Eliminar
+        </button>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+<div class="" *ngIf="modalSwitch == true">
+  <app-modal-usuarios></app-modal-usuarios>
+</div>
+
+<div class="" *ngIf="modalEditarSwitch == true">
+  <app-modal-usuarios-editar
+    [usuario]="usuarioSeleccionado"
+  ></app-modal-usuarios-editar>
+</div>
