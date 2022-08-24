@@ -1,0 +1,146 @@
+<form
+  autocomplete="off"
+  [formGroup]="formularioAgregarInsumo"
+  (ngSubmit)="guardar()"
+>
+  <div class="card-body">
+    <div class="form-group">
+      <label for="">Animal</label>
+      <select
+        class="custom-select form-control-border border-width-2"
+        formControlName="animal"
+      >
+        <!-- TODO: ngFor consultando un servicio que me brinde los numeros -->
+        <option value="">-- Seleccione un animal --</option>
+        <option *ngFor="let animal of animales" [value]="animal._id">
+          {{ animal.numero.num }}
+        </option>
+      </select>
+      <span
+        class="form-text text-danger"
+        *ngIf="
+        formularioAgregarInsumo.controls['animal'].errors &&
+        formularioAgregarInsumo.controls['animal'].touched
+        "
+        ><strong>Debe ingresar un animal</strong></span
+      >
+    </div>
+
+    <div class="form-group">
+      <label for="">Monto</label>
+      <input
+        type="text"
+        class="form-control"
+        formControlName="monto"
+      />
+      <span
+        class="form-text text-danger"
+        *ngIf="
+        formularioAgregarInsumo.controls['monto'].errors &&
+        formularioAgregarInsumo.controls['monto'].touched
+        "
+        ><strong>Debe ingresar un monto</strong></span
+      >
+    </div>
+
+    <div class="form-group">
+      <label for="">Descripción</label>
+      <input
+        type="text"
+        class="form-control"
+        formControlName="descripcion"
+      />
+      <span
+        class="form-text text-danger"
+        *ngIf="
+        formularioAgregarInsumo.controls['descripcion'].errors &&
+        formularioAgregarInsumo.controls['descripcion'].touched
+        "
+        ><strong>Debe ingresar una descripción</strong></span
+      >
+    </div>
+
+    <!-- <div class="form-group">
+      <label for="">Usuario</label>
+      <input type="text" class="form-control" formControlName="user" />
+      <span
+        class="form-text text-danger"
+        *ngIf="
+          formularioAgregarUsuario.controls['user'].errors &&
+          formularioAgregarUsuario.controls['user'].touched
+        "
+        ><strong>Debe ingresar un usuario</strong></span
+      >
+    </div> -->
+
+    <!-- <div class="form-group">
+      <label for="">Contraseña</label>
+      <input type="password" class="form-control" formControlName="password" />
+      <span
+        class="form-text text-danger"
+        *ngIf="
+          formularioAgregarUsuario.controls['password'].errors &&
+          formularioAgregarUsuario.controls['password'].touched
+        "
+        ><strong>Debe ingresar una contraseña</strong></span
+      >
+    </div> -->
+
+    <!-- <div class="form-group">
+      <label for="">Correo Electrónico</label>
+      <input type="text" class="form-control" formControlName="correo" />
+      <span
+        class="form-text text-danger"
+        *ngIf="
+          formularioAgregarUsuario.controls['correo'].errors?.['required'] &&
+          formularioAgregarUsuario.controls['correo'].touched
+        "
+        ><strong>Debe ingresar un correo electrónico válido</strong></span
+      >
+      <span
+        class="form-text text-danger"
+        *ngIf="
+          formularioAgregarUsuario.controls['correo'].errors?.['emailTomado'] &&
+          formularioAgregarUsuario.controls['correo'].touched
+        "
+        ><strong>Correo electrónico ya existe en el sistema</strong></span
+      >
+    </div> -->
+
+    <!-- <div class="form-group">
+      <label for="">Rol</label>
+      <select
+        class="custom-select form-control-border border-width-2"
+        formControlName="rol"
+      >
+        <option value="">-- Seleccione un Rol --</option>
+        <option value="ADMIN_ROL">ADMIN_ROL</option>
+        <option value="USER_ROL">USER_ROL</option>
+      </select>
+      <span
+        class="form-text text-danger"
+        *ngIf="
+          formularioAgregarUsuario.controls['rol'].errors &&
+          formularioAgregarUsuario.controls['rol'].touched
+        "
+        ><strong>Debe seleccionar un rol</strong></span
+      >
+    </div> -->
+  </div>
+  <!-- /.card-body -->
+
+  <div class="modal-footer justify-content-between">
+    <button
+      type="button"
+      class="BotonGuar"
+      data-dismiss="modal"
+      (click)="closeModal()"
+    >
+      Cerrar
+    </button>
+
+    <div>
+      <button type="submit" class="BotonGuar">Guardar</button>
+    </div>
+  </div>
+</form>

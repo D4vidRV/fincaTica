@@ -1,0 +1,17 @@
+<h2 style="color: green">Insumos por mes</h2>
+<br />
+<br />
+<ngx-charts-bar-vertical
+  [view]="view"
+  [results]="data"
+  [gradient]="gradient"
+  [xAxis]="showXAxis"
+  [yAxis]="showYAxis"
+  [legend]="showLegend"
+  [showXAxisLabel]="showXAxisLabel"
+  [showYAxisLabel]="showYAxisLabel"
+  [xAxisLabel]="xAxisLabel"
+  [yAxisLabel]="yAxisLabel"
+  (select)="onSelect()"
+>
+</ngx-charts-bar-vertical>

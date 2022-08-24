@@ -16,6 +16,18 @@ export class AnimalesService {
     return this.http.get(url);
   }
 
+  consultarAnimalesSinSalida() {
+    const url = `${this.baseUrl}/animales/sinsalida`;
+
+    return this.http.get(url);
+  }
+
+  consultarAnimalesPorGenero() {
+    const url = `${this.baseUrl}/animales/cantidadgeneros`;
+
+    return this.http.get(url);
+  }
+
   agregarAnimal(
     numero: string,
     color: string,

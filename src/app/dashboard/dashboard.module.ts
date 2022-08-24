@@ -9,7 +9,7 @@ import { NumerosModule } from '../numeros/numeros.module';
 import { UsuariosModule } from '../usuarios/usuarios.module';
 import { HomeComponent } from './pages/home/home.component';
 import { SubastasModule } from '../subastas/subastas.module';
-
+import { InsumosModule } from '../insumos/insumos.module';
 @NgModule({
   declarations: [MainComponent, HomeComponent],
   imports: [
@@ -18,6 +18,7 @@ import { SubastasModule } from '../subastas/subastas.module';
     AnimalesModule,
     NumerosModule,
     UsuariosModule,
+    InsumosModule,
     SharedModule,
   ],
 })

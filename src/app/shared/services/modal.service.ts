@@ -1,11 +1,10 @@
 import { EventEmitter, Injectable } from '@angular/core';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class ModalService {
-
-  constructor() { }
+  constructor() {}
 
   $modalAnimales = new EventEmitter<any>();
 
@@ -13,9 +12,11 @@ export class ModalService {
 
   $modalUsuarios = new EventEmitter<any>();
 
+  $modalInsumos = new EventEmitter<any>();
+
   $modalUsuariosEditar = new EventEmitter<any>();
 
   $modalAnimalesEditar = new EventEmitter<any>();
 
-  
+  $modalInsumosEditar = new EventEmitter<any>();
 }

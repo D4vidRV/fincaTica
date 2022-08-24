@@ -5,7 +5,9 @@
 export const environment = {
   production: false,
   localUrl: 'http://localhost:3000/api',
-  herokuUrl: 'https://fincatica-backend.herokuapp.com/api',
+  // herokuUrl: 'https://fincatica-backend.herokuapp.com/api',
+  herokuUrl: 'https://dry-garden-25019.herokuapp.com//api',
+  // herokuUrl: 'http://localhost:3000/api'
 };
 
 /*

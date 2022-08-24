@@ -11,6 +11,11 @@ import { ModalUsuariosEditarComponent } from './components/modal-usuarios-editar
 import { EditarUsuarioComponent } from './components/forms/editar-usuario/editar-usuario.component';
 import { ModalAnimalesEditarComponent } from './components/modal-animales-editar/modal-animales-editar.component';
 import { EditarAnimalComponent } from './components/forms/editar-animal/editar-animal.component';
+import { ModalInsumosComponent } from './components/modal-insumos/modal-insumos.component';
+import { NuevoInsumoComponent } from './components/forms/nuevo-insumo/nuevo-insumo.component';
+import { InsumosPorMesComponent } from './components/graphs/insumos-por-mes/insumos-por-mes.component';
+import { NgxChartsModule } from '@swimlane/ngx-charts';
+import { CantidadPorGeneroComponent } from './components/graphs/cantidad-por-genero/cantidad-por-genero.component';
 
 @NgModule({
   declarations: [
@@ -24,14 +29,21 @@ import { EditarAnimalComponent } from './components/forms/editar-animal/editar-a
     EditarUsuarioComponent,
     ModalAnimalesEditarComponent,
     EditarAnimalComponent,
+    ModalInsumosComponent,
+    NuevoInsumoComponent,
+    InsumosPorMesComponent,
+    CantidadPorGeneroComponent,
   ],
   exports: [
     ModalComponent,
     ModalNumerosComponent,
     ModalUsuariosComponent,
+    ModalInsumosComponent,
     ModalUsuariosEditarComponent,
     ModalAnimalesEditarComponent,
+    InsumosPorMesComponent,
+    CantidadPorGeneroComponent,
   ],
-  imports: [CommonModule, ReactiveFormsModule],
+  imports: [CommonModule, ReactiveFormsModule, NgxChartsModule],
 })
 export class SharedModule {}

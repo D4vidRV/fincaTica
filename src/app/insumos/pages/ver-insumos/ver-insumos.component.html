@@ -1,0 +1,98 @@
+<h3>Lista de Insumos</h3>
+<button type="button" class="btn btn-success" (click)="openModal()">
+  Nuevo Insumo
+</button>
+<br /><br />
+<h4>Filtrar Registros</h4>
+<form
+  autocomplete="off"
+  [formGroup]="formularioFiltrarInsumos"
+  (ngSubmit)="buscar()"
+>
+  <div class="row">
+    <div class="col-sm-3">
+      <label for="" class="text-dark">Año</label>
+      <div class="form-group">
+        <select
+          class="custom-select form-control-border border-width-2"
+          formControlName="year"
+        >
+          <option value="0">-- Año --</option>
+          <option *ngFor="let year of years" [value]="year.year">
+            {{ year.year }}
+          </option>
+        </select>
+      </div>
+    </div>
+    <div class="col-sm-3">
+      <label for="" class="text-dark">Mes</label>
+      <div class="form-group">
+        <select
+          class="custom-select form-control-border border-width-2"
+          formControlName="month"
+        >
+          <option value="0">-- Mes --</option>
+          <option *ngFor="let month of months" [value]="month.month">
+            {{ month.month }}
+          </option>
+        </select>
+      </div>
+    </div>
+    <div class="col-sm-3">
+      <label for="" class="text-dark"></label>
+      <div class="form-group">
+        <button
+          type="submit"
+          class="btn btn-success mt-2"
+          [disabled]="!formularioFiltrarInsumos.valid"
+        >
+          Buscar
+        </button>
+      </div>
+    </div>
+  </div>
+</form>
+
+<br /><br />
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col"># de Animal</th>
+      <th scope="col">Monto Total</th>
+      <th scope="col">Acciones</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let insumo of insumos">
+      <th scope="row">{{ insumo.numero }}</th>
+      <td>{{ insumo.total | number }}</td>
+      <td>
+        <button
+          type="button"
+          (click)="openModalEditar(insumo)"
+          class="btn btn-success"
+        >
+          VER DETALLE
+        </button>
+        <!-- <a> | </a> -->
+        <!-- <button
+          type="button"
+          (click)="eliminarInsumo(insumo)"
+          class="btn btn-danger ml-1"
+        >
+          Eliminar
+        </button> -->
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+<div class="" *ngIf="modalSwitch == true">
+  <app-modal-insumos></app-modal-insumos>
+</div>
+
+<!-- <div class="" *ngIf="modalEditarSwitch == true">
+  <app-modal-usuarios-editar
+    [usuario]="insumoSeleccionado"
+  ></app-modal-usuarios-editar>
+</div> -->
